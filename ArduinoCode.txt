@@ -1,0 +1,23 @@
+int LDR = 0;
+
+
+// initialize the serial port
+// and declare inputs and outputs
+void setup() {
+  pinMode(LDR, INPUT);
+  Serial.begin(9600);
+}
+
+// read from the analog input connected to the LDR
+// and print the value to the serial port.
+// the delay is only to avoid sending so much data
+// as to make it unreadable.
+void loop() {
+
+  float v = analogRead(LDR);
+  float voltage=5.0/1024.0*1000.0*v;
+
+
+  Serial.println(voltage);
+  delay(1);
+}
