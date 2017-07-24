@@ -2,7 +2,7 @@ clear all;
 close all;
 clc;
 
-h=waitbar(0,'Sacekajte malo, ucitava se...'); %Waitbar is here to measure time and show when initialization 
+h=waitbar(0,'Loading...'); %Waitbar is here to measure time and show when initialization 
 tic                                           %is over 
 instrhwinfo('Bluetooth');                     %Command that gives back structure for communication with Bluetooth
 instrhwinfo('Bluetooth','HC-06');             %Starting communication with Bluetooth
@@ -34,9 +34,9 @@ while(1)
                                                        
                                                                                                          
     grid minor
-    title('EKG','FontSize',12);
-    ylabel('amplituda[mV]','FontSize',10);
-    xlabel('vreme[s]','FontSize',10);
+    title('ECG','FontSize',12);
+    ylabel('Amplitude [mV]','FontSize',10);
+    xlabel('time [s]','FontSize',10);
   
     if (i==500)    %With this loop we will store data in matrix, so all data will be saved after plotting
         k=k+1;     %All data will be saved in rows so we can see again any row that was ploted 
