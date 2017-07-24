@@ -10,6 +10,8 @@ Next, we used Matlab to get data from Bluetooth, with some commands that you wil
 
 Mentioned sensor was used for measuring ECG. We used disposable Ag/AgCl electrodes that are pre-gelled. Arduino was used for reading signals from ECG sensor by converting analog to digital signal. It was powered with 9V battery. Arduino TX pin is connected to two resistors that are connected in series first restitor has value: 1kΩ and second: 2kΩ. 2k resistor is connected with other end to the ground. That was used because logical high value is 5V, and RX pin receives logical high value of 3.3V. Signal that goes into RX pin is signal from point where two resistors are connected. Platform would work either way, but it is recommended to work this way.
 
+Image of scheme can be seen here: https://user-images.githubusercontent.com/26125722/28544745-a4587074-70c4-11e7-8b55-54bd1bce63a3.JPG
+
 Pin RX from platfrom goes directly to TX pin of module. Source for powering Bluetooth module is 5V pin on Arduino platform. Also there is GND pin on platform. Pin from connector that has SIG1 label is going to A0 pin on Arduino platform. That pin is used for reading signals. That signal needs to be in range from 0 to 5 V. A/D converter is 10-bit, so there is 1024 levels which means that smallest change of voltage that can be detected is 4.88 mV. Arduino command for reading input voltages is implemented that it reads levels, so in code there is conversion to voltage. With delay() command, sampling frequency is defined. Argument of delay function is miliseconds, which will be used for delaying code implementation.  
 
 
